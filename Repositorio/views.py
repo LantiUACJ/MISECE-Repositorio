@@ -10,7 +10,7 @@ def petition(request):
         varJson = json.loads(data)
 
         print(varJson["entry"][0]["resource"]["resourceType"])
-        return HttpResponse("{\"status\":\"ok\"}", content_type="Application/json")
+        return HttpResponse("{\"status\":\"Ok\"}", content_type="Application/json")
     else:
         return HttpResponse("{\"status\":\"fail\"}", content_type="Application/json")
     
