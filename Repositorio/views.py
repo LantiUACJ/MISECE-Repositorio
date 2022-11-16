@@ -18,6 +18,6 @@ def readJson(request):
     f = open("test.json", "r")
     data = f.read()
     varJson = json.loads(data)
-    res = Resources()
+    res = Resources(varJson)
     res.setup(varJson)
     return HttpResponse("{\"status\":\"ok\"}", content_type="Application/json")
