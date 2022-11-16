@@ -3,8 +3,11 @@ from datetime import datetime
 from types import NoneType
 from Repositorio.models import P_direccion, Paciente, P_encuentro
 
-
 class Resources:
+
+
+    
+
     def __init__(self, json):
         print("inicio")
         for b_item in json.keys(): 
@@ -20,7 +23,8 @@ class Resources:
                             
             
         
-    def setup(self, json):        
+    def setup(self, json):    
+        print(self.paciente)    
         print(json["resourceType"])
         if(json["resourceType"] == "Bundle"):
             self.bundle(json)
@@ -67,7 +71,7 @@ class Resources:
     def lst_2dic(self, json):
         print(json)
         dic_items = {}
-        lst_len= len(json) - 1
+        lst_len= len(json)
         for i in range(lst_len):
             dic_items = json[i]
             print(dic_items)
@@ -129,7 +133,9 @@ class Resources:
         Paciente_act.save()
         #p_dir.paciente_id = Paciente_act
         P_dir.paciente_id = Paciente_act.paciente_id
+        Paciente_ind = Paciente_act.paciente_id
         P_dir.save()
+        return Paciente_act.paciente_id
        
    
 
@@ -160,6 +166,7 @@ class Resources:
                             Encuentro_act.codigo = clase[c_item]
                         if(c_item == "display"):
                             Encuentro_act.visual = clase[c_item]
+        Encuentro_act.paciente_id = self.paciente
         Encuentro_act.save()
         enc_keys = json.keys()
         """print(enc_keys)

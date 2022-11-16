@@ -47,7 +47,7 @@ class P_alergia(models.Model):
 
 class P_encuentro(models.Model):
     paciente_id = models.CharField(max_length=128)
-    encuentro_id = models.CharField(max_length=128, unique=True)
+    encuentro_id = models.CharField(max_length=128)
     estatus = models.CharField(max_length=50)
     sistema = models.CharField(max_length=150)
     codigo = models.CharField(max_length=50)
