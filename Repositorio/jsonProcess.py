@@ -1,7 +1,7 @@
 
 from datetime import datetime
 from types import NoneType
-from Repositorio.models import P_direccion, Paciente, P_encuentro
+from Repositorio.models import P_direccion, Paciente, P_encuentro, P_observacion
 
 class Resources:
 
@@ -11,13 +11,14 @@ class Resources:
     def __init__(self, json):
         print("inicio")
         for b_item in json.keys(): 
+            print(json.keys())
             if(b_item == "entry"):
                 for element in json["entry"]:   
                     for e_item in element.keys():  
                         if(e_item == "resource"):
                             if(element["resource"]["resourceType"] == "Patient"):
                                 print(element["resource"])
-                                self.paciente= self.patient(element["resource"])
+                                self.paciente = self.patient(element["resource"])
                             if(element["resource"]["resourceType"] == "Organization"):
                                 print(element)
                             
@@ -28,10 +29,10 @@ class Resources:
         print(json["resourceType"])
         if(json["resourceType"] == "Bundle"):
             self.bundle(json)
+        if(json["resourceType"] == "Composition"):
+            self.composition(json)
         if(json["resourceType"] == "AllergyIntolerance"):
             self.allergyIntolerance(json)
-#        if(json["resourceType"] == "Patient"):
-#            self.patient(json)
         if(json["resourceType"] == "FamilyMemberHistory"):
             self.FamilyMemberHistory(json)
         if(json["resourceType"] == "Encounter"):
@@ -87,7 +88,15 @@ class Resources:
             if id_items['system'] == 'CURP':
                 return id_items
         
-   
+    def composition(self, json):
+        for comp_item in json.keys():  
+            if(comp_item == "encounter"):
+                for e_item in json[comp_item]:
+                    if(e_item == "reference"):
+                        print(json[comp_item][e_item])
+                       # self.encuentro = json[comp_item][e_item]
+                        
+                
 
     def patient(self, json):
         Paciente_act = Paciente()
@@ -147,6 +156,7 @@ class Resources:
             print(json[fmh_item])
     
     def encounter(self, json):
+        print("Encuentro")
         Encuentro_act = P_encuentro()
         for e_item in json.keys():  
             if(e_item == "class"):
@@ -159,29 +169,81 @@ class Resources:
                 else:
                     print(clase)
                     for c_item in clase:
-                        print(c_item)
                         if(c_item == "system"):
                             Encuentro_act.sistema = clase[c_item]
                         if(c_item == "code"):
                             Encuentro_act.codigo = clase[c_item]
                         if(c_item == "display"):
                             Encuentro_act.visual = clase[c_item]
+            if(e_item == "id"):
+                print((json[e_item]))
+                Encuentro_act.encuentro_id = json[e_item]
+            if(e_item == "period"):
+                #print((json[e_item]))
+                periodo = {}
+                periodo = json[e_item]
+                print("encounter/class section")
+                if periodo == None:
+                    print("No hay datos de clase para este encuentro")
+                else:
+                    print(periodo)
+                    for pe_item in periodo:
+                        print(pe_item)
+                        if(pe_item == "start"):
+                            Encuentro_act.periodo_inicio = periodo[pe_item]
+                        if(pe_item == "end"):
+                            Encuentro_act.periodo_fin = periodo[pe_item]
         Encuentro_act.paciente_id = self.paciente
         Encuentro_act.save()
-        enc_keys = json.keys()
-        """print(enc_keys)
-        for enc_item in json.keys():  
-            #if(enc_item == "identifier"):
-            print(json[enc_item])
-        #print(json["period"])"""
-
+       
     def observation(self, json):
+        observacion = P_observacion()
         obs_keys = json.keys()
         print(obs_keys)
         for obs_item in json.keys():  
-            #if(obs_item == "identifier"):
+            if(obs_item == "encounter"):
+                #id_encuentro = json[obs_item]
+                for enc_item in json[obs_item]:
+                    if(enc_item == "reference"):
+                        id_encuentro = json[obs_item][enc_item]
+                        #remover "Encounter/" del valor, el id del encuentro al que corresponde esta observación inicia en el lugar 10
+                        observacion.encuentro_id = id_encuentro[10:]
+                print(observacion.encuentro_id)
             #print(json[obs_item])
             print(json[obs_item])
+            if(obs_item == "effectiveDateTime"):
+                observacion.fecha_efectiva = json[obs_item]
+            if(obs_item == "id"):
+                print("obs id:")
+                observacion.observacion_id = json[obs_item]
+                print(observacion.observacion_id)
+            if(obs_item == "coding"):
+                print(json[obs_item])
+                coding = {}
+                coding = (self.lst_2dic(json[obs_item][coding]))
+                print("coding after lst to dic fnc")
+                print(coding)
+                for c_item in coding:
+                    print(coding[c_item])    
+                    if(c_item == "code"):
+                        observacion.codigo_codigo = coding[c_item]
+                    if(c_item == "system"):
+                        observacion.codigo_sistema = coding[c_item]
+                    if(c_item == "display"):
+                        observacion.codigo_visual = coding[c_item]
+            if(obs_item == "valueQuantity"):
+                print(json[obs_item])
+                for v_item in json[obs_item]:
+                    if(v_item == "value"):
+                        observacion.cantidad_valor = json[obs_item][v_item]
+                    if(v_item == "unit"):
+                        observacion.cantidad_unidad = json[obs_item][v_item]
+                    if(v_item == "code"):
+                        observacion.cantidad_codigo = json[obs_item][v_item]
+                    if(v_item == "system"):
+                        observacion.cantidad_sistema = json[obs_item][v_item]
+            observacion.paciente_id = self.paciente
+        observacion.save()
    
     def medication(self, json):
         med_keys = json.keys()
@@ -201,6 +263,9 @@ class Resources:
         entry_keys = json.keys()
         print(entry_keys)
         for e_item in json.keys():  
+            if(e_item == "fullurl"):
+                self.fullurl = (json[e_item])
+                print(self.fullurl)
             if(e_item == "resource"):
                 self.setup(json[e_item])
     

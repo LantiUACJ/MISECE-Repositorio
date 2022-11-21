@@ -1,0 +1,1982 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+      {
+        "fullUrl": "urn:uuid:b96a6c52d4d97529a2527be6176105ad",
+        "resource": {
+          "resourceType": "Patient",
+          "identifier": [
+            {
+              "use": "official",
+              "value": "SAL19970114MBCNDN97H",
+              "system": "CURP",
+              "type": {
+                "text": "CURP"
+              }
+            },
+            {
+              "use": "official",
+              "value": "9238555",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://www.expcli.com",
+                    "version": "1.0.0.0"
+                  }
+                ],
+                "text": "Folio"
+              }
+            }
+          ],
+          "language": "es",
+          "active": true,
+          "name": [
+            {
+              "use": "official",
+              "text": "Ángela Santos Ledesma",
+              "family": "Santos",
+              "given": [
+                "Ángela"
+              ]
+            }
+          ],
+          "gender": "female",
+          "birthDate": "1997-01-14",
+          "address": [
+            {
+              "city": "JUÁREZ",
+              "district": "JUÁREZ",
+              "state": "CHIHUAHUA"
+            }
+          ],
+          "communication": [
+            {
+              "language": {
+                "text": "español"
+              },
+              "preferred": true
+            }
+          ],
+          "hash": "b96a6c52d4d97529a2527be6176105ad"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Patient"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:c8764276a4fa523717f42361ef172447",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Antecedentes",
+                  "display": "Antecedentes"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Antecedentes Familiares"
+              }
+            ],
+            "text": "Antecedentes Familiares"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "118",
+          "hash": "c8764276a4fa523717f42361ef172447"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:9b78fa6eeeb15ad6e34b7d017f5e9804",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Antecedentes",
+                  "display": "Antecedentes"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Antecedentes No Patológicos"
+              }
+            ],
+            "text": "Antecedentes No Patológicos"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "toma",
+          "hash": "9b78fa6eeeb15ad6e34b7d017f5e9804"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:489a3a1d1048126eee10b823130fea11",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Antecedentes",
+                  "display": "Antecedentes"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Antecedentes Patológicos"
+              }
+            ],
+            "text": "Antecedentes Patológicos"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "DORSOPATÍA DEFORMANTE, NO ESPECIFICADA",
+          "hash": "489a3a1d1048126eee10b823130fea11"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:27450ca177a8004c654764fff731dad1",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Antecedentes",
+                  "display": "Antecedentes"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Antecedentes Patológicos"
+              }
+            ],
+            "text": "Antecedentes Patológicos"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "TRASTORNOS DE LA INGESTIÓN DE ALIMENTOS",
+          "hash": "27450ca177a8004c654764fff731dad1"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:24e5bd236e9673d66e06c4de45fc6f1e",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Antecedentes",
+                  "display": "Antecedentes"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Antecedentes Patológicos"
+              }
+            ],
+            "text": "Antecedentes Patológicos"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "HIPERPARATIROIDISMO, SIN OTRA ESPECIFICACIÓN",
+          "hash": "24e5bd236e9673d66e06c4de45fc6f1e"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:c403630d413b5bfb7e6002ce363bf2fa",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Habitus Exterior"
+              }
+            ],
+            "text": "Habitus Exterior"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "en malas condiciones",
+          "hash": "c403630d413b5bfb7e6002ce363bf2fa"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:eaed1159b6bd90e4e7ab6a5419ea99bd",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Temperatura"
+              }
+            ],
+            "text": "Temperatura"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 45,
+          "hash": "eaed1159b6bd90e4e7ab6a5419ea99bd"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:fbf716d3a418c48d489c87a7ee015d36",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "tension_arterial_sistólica"
+              }
+            ],
+            "text": "tension_arterial_sistólica"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 115,
+          "hash": "fbf716d3a418c48d489c87a7ee015d36"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:dcf2d358c96262d987ac08deaf4b05dc",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "tension_arterial_diastólica"
+              }
+            ],
+            "text": "tension_arterial_diastólica"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 41,
+          "hash": "dcf2d358c96262d987ac08deaf4b05dc"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:d92b680f7b2b229f4e4c9c99dcb31f74",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "frecuencia_cardiaca"
+              }
+            ],
+            "text": "frecuencia_cardiaca"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 75,
+          "hash": "d92b680f7b2b229f4e4c9c99dcb31f74"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:bd8a7666a62532237afcfb680f61b375",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "frecuencia_respiratoria"
+              }
+            ],
+            "text": "frecuencia_respiratoria"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 20,
+          "hash": "bd8a7666a62532237afcfb680f61b375"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:a44b0a27f7c4b99ec73c148395268537",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "peso"
+              }
+            ],
+            "text": "peso"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 32,
+          "hash": "a44b0a27f7c4b99ec73c148395268537"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:122642aaa3e7d0b009a2eaadd3402a1f",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "talla"
+              }
+            ],
+            "text": "talla"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 64,
+          "hash": "122642aaa3e7d0b009a2eaadd3402a1f"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:eaa659c516b817e4b7be3e10735e6fcf",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Estudios",
+                  "display": "Estudios"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Ecografía para la viabilidad fetal"
+              }
+            ],
+            "text": "Ecografía para la viabilidad fetal"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "positivo",
+          "hash": "eaa659c516b817e4b7be3e10735e6fcf"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:c224bc98191b0ee7213501cf2fe9b99c",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Estudios",
+                  "display": "Estudios"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "ARN del virus de la influenza B [Presencia] en una muestra respiratoria por NAA con detección de sonda"
+              }
+            ],
+            "text": "ARN del virus de la influenza B [Presencia] en una muestra respiratoria por NAA con detección de sonda"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "negativo",
+          "hash": "c224bc98191b0ee7213501cf2fe9b99c"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:c056e2ac1542c2df6dd436318a778011",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "KETAMINA"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 4 pastilla de KETAMINA cada  9 Hora(s)",
+              "method": {
+                "text": "Implante"
+              },
+              "dose": {
+                "value": "4",
+                "code": "pastilla"
+              },
+              "rateQuantity": {
+                "value": "9",
+                "unit": "Hora(s)"
+              }
+            }
+          ],
+          "hash": "c056e2ac1542c2df6dd436318a778011"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:3bbcf9b29410c1a4300d80f011ced8e6",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "METAMIZOL SÓDICO"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 1.8 pastilla de METAMIZOL SÓDICO cada  2.6 Día(s)",
+              "method": {
+                "text": "Solucion Oral"
+              },
+              "dose": {
+                "value": "1.8",
+                "code": "pastilla"
+              },
+              "rateQuantity": {
+                "value": "2.6",
+                "unit": "Día(s)"
+              }
+            }
+          ],
+          "hash": "3bbcf9b29410c1a4300d80f011ced8e6"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c",
+        "resource": {
+          "resourceType": "Encounter",
+          "identifier": [
+            {
+              "use": "official",
+              "value": 29,
+              "type": {
+                "coding": {
+                  "system": "http://www.expcli.com",
+                  "version": "1.0.0.0"
+                },
+                "text": "ID"
+              }
+            }
+          ],
+          "status": "finished",
+          "class": {
+            "display": "Visita"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "period": {
+            "start": "2017-11-09T20:09:55.000000Z",
+            "end": "2017-11-09T20:09:55.000000Z"
+          },
+          "reasonCode": [
+            {
+              "text": "itaque minima quaerat blanditiis ipsum non"
+            }
+          ],
+          "hash": "9128c8fc091d37a2e4890449bfdbed1c"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Encounter"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:91c1133b238035e1fff6124e297d56cf",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Diagnostico",
+                  "display": "Diagnostico"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Diagnostico"
+              }
+            ],
+            "text": "Diagnostico"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "HIPERPLASIA DE LA PRÓSTATA",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "91c1133b238035e1fff6124e297d56cf"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:058aac7ce8bf3e10f77fef9c2edbcc6f",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Diagnostico",
+                  "display": "Diagnostico"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Diagnostico"
+              }
+            ],
+            "text": "Diagnostico"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "TRAUMATISMO DEL NERVIO PERONEAL PROFUNDO A NIVEL DEL PIE Y DEL TOBILLO",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "058aac7ce8bf3e10f77fef9c2edbcc6f"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:2e9876ae9453a59f2c17988957408e49",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "KETAMINA"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 2 MG/ML de KETAMINA cada  6 Día(s)",
+              "method": {
+                "text": "Implante"
+              },
+              "dose": {
+                "value": "2",
+                "code": "MG/ML"
+              },
+              "rateQuantity": {
+                "value": "6",
+                "unit": "Día(s)"
+              }
+            }
+          ],
+          "hash": "2e9876ae9453a59f2c17988957408e49",
+          "context": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:37c5df776e010029a35f87c3dff2c598",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "CLORTALIDONA"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 8 MG de CLORTALIDONA cada  6.1 Hora(s)",
+              "method": {
+                "text": "Tableta oral"
+              },
+              "dose": {
+                "value": "8",
+                "code": "MG"
+              },
+              "rateQuantity": {
+                "value": "6.1",
+                "unit": "Hora(s)"
+              }
+            }
+          ],
+          "hash": "37c5df776e010029a35f87c3dff2c598",
+          "context": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:852ef0c5a22d5bcfd429327912117b12",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "SUXAMETONIO, CLORURO DE"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 8 MG/ML de SUXAMETONIO, CLORURO DE cada  9 Día(s)",
+              "method": {
+                "text": "Implante"
+              },
+              "dose": {
+                "value": "8",
+                "code": "MG/ML"
+              },
+              "rateQuantity": {
+                "value": "9",
+                "unit": "Día(s)"
+              }
+            }
+          ],
+          "hash": "852ef0c5a22d5bcfd429327912117b12",
+          "context": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:6a99c89e1726c31ffb8094fb3c21f9da",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "DIAZEPAM"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 6.2 MG de DIAZEPAM cada  10 Día(s)",
+              "method": {
+                "text": "Solucion Oral"
+              },
+              "dose": {
+                "value": "6.2",
+                "code": "MG"
+              },
+              "rateQuantity": {
+                "value": "10",
+                "unit": "Día(s)"
+              }
+            }
+          ],
+          "hash": "6a99c89e1726c31ffb8094fb3c21f9da",
+          "context": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:c1bc74bc0b208949a39bcdca877cd3e1",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Habitus Exterior"
+              }
+            ],
+            "text": "Habitus Exterior"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "normal",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "c1bc74bc0b208949a39bcdca877cd3e1"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:b8c6b4e753bcce58ead1b2c72e75332e",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Temperatura"
+              }
+            ],
+            "text": "Temperatura"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 44,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "b8c6b4e753bcce58ead1b2c72e75332e"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:9aa3da2235ac8478cfe290f2731c22a5",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "tension_arterial_sistólica"
+              }
+            ],
+            "text": "tension_arterial_sistólica"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 104,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "9aa3da2235ac8478cfe290f2731c22a5"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:1a95c47012c2036ee050eb580a8326cb",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "tension_arterial_diastólica"
+              }
+            ],
+            "text": "tension_arterial_diastólica"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 39,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "1a95c47012c2036ee050eb580a8326cb"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:b299e98b97d53cc12f5d4b9b11f2b5dc",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "frecuencia_cardiaca"
+              }
+            ],
+            "text": "frecuencia_cardiaca"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 30,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "b299e98b97d53cc12f5d4b9b11f2b5dc"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:fea99a81384ebe8fd46750bdf9429bcf",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "frecuencia_respiratoria"
+              }
+            ],
+            "text": "frecuencia_respiratoria"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 27,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "fea99a81384ebe8fd46750bdf9429bcf"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:d9376d779e641eaeecda5f3d46e8f9a7",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "peso"
+              }
+            ],
+            "text": "peso"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 50,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "d9376d779e641eaeecda5f3d46e8f9a7"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:d89ff593150da88c4a05d24e2e25c9a1",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "talla"
+              }
+            ],
+            "text": "talla"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 116,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "d89ff593150da88c4a05d24e2e25c9a1"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:4241a6e48216031bf8ca6cb3859eea41",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Estudios",
+                  "display": "Estudios"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "[Presencia] de ARN del virus de la influenza A en una muestra respiratoria por NAA con detección de sonda"
+              }
+            ],
+            "text": "[Presencia] de ARN del virus de la influenza A en una muestra respiratoria por NAA con detección de sonda"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "negativo",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:9128c8fc091d37a2e4890449bfdbed1c"
+          },
+          "hash": "4241a6e48216031bf8ca6cb3859eea41"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366",
+        "resource": {
+          "resourceType": "Encounter",
+          "identifier": [
+            {
+              "use": "official",
+              "value": 30,
+              "type": {
+                "coding": {
+                  "system": "http://www.expcli.com",
+                  "version": "1.0.0.0"
+                },
+                "text": "ID"
+              }
+            }
+          ],
+          "status": "finished",
+          "class": {
+            "display": "Visita"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "period": {
+            "start": "2016-02-28T23:08:32.000000Z",
+            "end": "2016-02-28T23:08:32.000000Z"
+          },
+          "reasonCode": [
+            {
+              "text": "explicabo ut in aut quo similique quaerat nihil sunt natus commodi quo sunt fugiat enim maiores iste esse"
+            }
+          ],
+          "hash": "87eb0c9dd12b8d209d7a0c3088670366"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Encounter"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:1436e4b1f76b22d202f72724ff85663e",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Diagnostico",
+                  "display": "Diagnostico"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Diagnostico"
+              }
+            ],
+            "text": "Diagnostico"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "ENVENENAMIENTO ACCIDENTAL POR, Y EXPOSICIÓN A OTROS PRODUCTOS QUÍMICOS Y SUSTANCIAS NOCIVAS, Y LOS NO ESPECIFICADOS, GRANJA",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "1436e4b1f76b22d202f72724ff85663e"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:f6d6f0103e2fe80cc56885ecb448617a",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Diagnostico",
+                  "display": "Diagnostico"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Diagnostico"
+              }
+            ],
+            "text": "Diagnostico"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "ENFERMEDAD CARDÍACA, NO ESPECIFICADA",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "f6d6f0103e2fe80cc56885ecb448617a"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:ca0f8f500ab4525e467541679b39a748",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "DEXTROPROPOXIFENO"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 3.4 MG/ML de DEXTROPROPOXIFENO cada  10 Hora(s)",
+              "method": {
+                "text": "Inyección"
+              },
+              "dose": {
+                "value": "3.4",
+                "code": "MG/ML"
+              },
+              "rateQuantity": {
+                "value": "10",
+                "unit": "Hora(s)"
+              }
+            }
+          ],
+          "hash": "ca0f8f500ab4525e467541679b39a748",
+          "context": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:c9c483fe2b50f443b5e03073b3ce5892",
+        "resource": {
+          "resourceType": "MedicationAdministration",
+          "status": "completed",
+          "medicationCodeableConcept": {
+            "text": "LIDOCAÍNA"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "dosage": [
+            {
+              "text": "Tomar 6.3 MG/ML de LIDOCAÍNA cada  7.2 Hora(s)",
+              "method": {
+                "text": "Solucion Oral"
+              },
+              "dose": {
+                "value": "6.3",
+                "code": "MG/ML"
+              },
+              "rateQuantity": {
+                "value": "7.2",
+                "unit": "Hora(s)"
+              }
+            }
+          ],
+          "hash": "c9c483fe2b50f443b5e03073b3ce5892",
+          "context": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          }
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/MedicationAdministration"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:59472721cc11c872a14d98bf4a3167ed",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Habitus Exterior"
+              }
+            ],
+            "text": "Habitus Exterior"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "normal",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "59472721cc11c872a14d98bf4a3167ed"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:9e35362ff943570165b7a51cdfc05106",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Temperatura"
+              }
+            ],
+            "text": "Temperatura"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 41,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "9e35362ff943570165b7a51cdfc05106"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:2a79510698c169733328f40ed7b6dcd6",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "tension_arterial_sistólica"
+              }
+            ],
+            "text": "tension_arterial_sistólica"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 91,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "2a79510698c169733328f40ed7b6dcd6"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:119ebd02b2bce1be4919eedcd095001a",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "tension_arterial_diastólica"
+              }
+            ],
+            "text": "tension_arterial_diastólica"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 32,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "119ebd02b2bce1be4919eedcd095001a"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:55662006de113e6e4fa3be29ae3a424e",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "frecuencia_cardiaca"
+              }
+            ],
+            "text": "frecuencia_cardiaca"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 24,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "55662006de113e6e4fa3be29ae3a424e"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:1d39b6b5890ff65fc7574049c2422509",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "frecuencia_respiratoria"
+              }
+            ],
+            "text": "frecuencia_respiratoria"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 21,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "1d39b6b5890ff65fc7574049c2422509"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:14d51db509ffe608091d114463ab5862",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "peso"
+              }
+            ],
+            "text": "peso"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 144,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "14d51db509ffe608091d114463ab5862"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:608fb84339fad4964a468621d045ecfe",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Exploración Física",
+                  "display": "Exploración Física"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "talla"
+              }
+            ],
+            "text": "talla"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": 127,
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "608fb84339fad4964a468621d045ecfe"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      },
+      {
+        "fullUrl": "urn:uuid:abb2508fc745b81c1ac73d60c6ca7541",
+        "resource": {
+          "resourceType": "Observation",
+          "status": "final",
+          "category": [
+            {
+              "coding": [
+                {
+                  "code": "Estudios",
+                  "display": "Estudios"
+                }
+              ]
+            }
+          ],
+          "code": {
+            "coding": [
+              {
+                "display": "Ecografía para la viabilidad fetal"
+              }
+            ],
+            "text": "Ecografía para la viabilidad fetal"
+          },
+          "subject": {
+            "type": "Patient",
+            "reference": "urn:uuid:b96a6c52d4d97529a2527be6176105ad"
+          },
+          "valueString": "97.8772",
+          "encounter": {
+            "type": "Encounter",
+            "reference": "urn:uuid:87eb0c9dd12b8d209d7a0c3088670366"
+          },
+          "hash": "abb2508fc745b81c1ac73d60c6ca7541"
+        },
+        "request": {
+          "method": "POST",
+          "url": "http://148.210.68.182:8080/fhir/Observation"
+        },
+        "response": {
+          "status": "Store"
+        }
+      }
+    ]
+  }

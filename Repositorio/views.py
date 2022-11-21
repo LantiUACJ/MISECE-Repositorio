@@ -15,7 +15,7 @@ def petition(request):
         return HttpResponse("{\"status\":\"fail\"}", content_type="Application/json")
     
 def readJson(request):
-    f = open("test.json", "r")
+    f = open("test.json", "r",encoding='utf-8')
     data = f.read()
     varJson = json.loads(data)
     res = Resources(varJson)

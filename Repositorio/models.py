@@ -1,7 +1,9 @@
+
 from enum import unique
 from unittest.util import _MAX_LENGTH
 from django.db import models
 from datetime import datetime
+from django.utils import timezone
 
 class Paciente(models.Model):
     #Información del paciente anonimizada
@@ -31,19 +33,19 @@ class O_direccion(models.Model):
     estado_dir = models.CharField(max_length=50)
     ciudad_dir = models.CharField(max_length=50)
     cp_dir = models.CharField(max_length=5)
-    fecha_en_sistema = models.DateField(default=datetime.now)
+    fecha_en_sistema = models.DateTimeField(default=datetime.now)
 
 class P_alergia(models.Model):
     paciente_id = models.CharField(max_length=128)
     alergia_id = models.CharField(max_length=128)
-    citicidad = models.CharField(max_length=50)
+    criticidad = models.CharField(max_length=50)
     codigo_sistema = models.CharField(max_length=150)
     codigo_codigo = models.CharField(max_length=50)
     codigo_visual = models.CharField(max_length=50)
     texto = models.CharField(max_length=150)
     estatus = models.CharField(max_length=50)
-    fecha_registro = models.DateTimeField
-    fecha_en_sistema = models.DateField(default=datetime.now)
+    fecha_de_registro = models.DateTimeField()
+    fecha_en_sistema = models.DateTimeField(default=datetime.now)
 
 class P_encuentro(models.Model):
     paciente_id = models.CharField(max_length=128)
@@ -52,9 +54,9 @@ class P_encuentro(models.Model):
     sistema = models.CharField(max_length=150)
     codigo = models.CharField(max_length=50)
     visual = models.CharField(max_length=50)
-    periodo_inicio = models.DateTimeField
-    periodo_fin = models.DateTimeField
-    fecha_en_sistema = models.DateField(default=datetime.now)
+    periodo_inicio = models.DateTimeField()
+    periodo_fin = models.DateTimeField()
+    fecha_en_sistema = models.DateTimeField(default=datetime.now)
 
 class P_observacion(models.Model):
     paciente_id = models.CharField(max_length=128)
@@ -67,7 +69,7 @@ class P_observacion(models.Model):
     cantidad_unidad = models.CharField(max_length=50)
     cantidad_valor = models.CharField(max_length=50)
     cantidad_codigo = models.CharField(max_length=50)
-    cantidad_sitema = models.CharField(max_length=150)
+    cantidad_sistema = models.CharField(max_length=150)
     texto = models.CharField(max_length=150)
-    fecha_efectiva = models.DateTimeField
-    fecha_en_sistema = models.DateField(default=datetime.now)
+    fecha_efectiva = models.DateTimeField(null=True, blank=True)
+    fecha_en_sistema = models.DateTimeField(default=timezone.now)
