@@ -1,4 +1,6 @@
 
+
+import hashlib
 from datetime import datetime
 from types import NoneType
 from Repositorio.models import P_direccion, Paciente, P_encuentro, P_observacion
@@ -52,28 +54,24 @@ class Resources:
         for b_item in json.keys(): 
             if(b_item == "entry"):
                 for element in json["entry"]:   
-                    #self.setup(element["resource"])
                     self.entry(element)
-                #print(element)
     
     def allergyIntolerance(self, json):
         #print(json["resourceType"])
         print(json["criticality"])
 
-
-    def p_address(self, json):
-        address_len = len(json)
-        print(address_len)
-        add_items = {}
-        for i in range(address_len):
-            add_items = json[i]
-        return add_items
+    def hash_id(self, curp):
+        salt = "repo"
+        palabra = curp + salt
+        palabra_h = hashlib.sha256(palabra.encode()).hexdigest()
+        return palabra_h
 
     def lst_2dic(self, json):
         print(json)
         dic_items = {}
         lst_len= len(json)
         for i in range(lst_len):
+            print(i)
             dic_items = json[i]
             print(dic_items)
         return dic_items
@@ -96,8 +94,7 @@ class Resources:
                         print(json[comp_item][e_item])
                        # self.encuentro = json[comp_item][e_item]
                         
-                
-
+  
     def patient(self, json):
         Paciente_act = Paciente()
         P_dir = P_direccion()
@@ -118,7 +115,8 @@ class Resources:
                         if(i_item == "value"):
                             valor = pac_id[i_item]
                     if sistema == "CURP":
-                        Paciente_act.paciente_id = valor
+                        Pac_Curp = valor
+                        Paciente_act.paciente_id = self.hash_id(Pac_Curp)
                         #Paciente_act.paciente_id = "123456789"   
             if(p_item == "birthDate"):
                 Paciente_act.fecha_nac = json[p_item]
@@ -130,15 +128,12 @@ class Resources:
                 dir = (self.lst_2dic(json[p_item]))
                 for a_item in dir:
                     if(a_item == "state"):
-                        #p_dir.estado_dir = json[a_item]
                         P_dir.estado_dir = dir[a_item]
                     if(a_item == "city"):
-                        #p_dir.ciudad_dir = json[a_item]
                         P_dir.ciudad_dir = dir[a_item]
                     if(a_item == "postalCode"):
-                        #p_dir.cp_dir = json[a_item]
                         P_dir.cp_dir = dir[a_item]
-            #retornar estatus de guardar info, error o todo bien, (archivo de log pendiente)
+           #retornar estatus de guardar info, error o todo bien, (archivo de log pendiente)
         Paciente_act.save()
         #p_dir.paciente_id = Paciente_act
         P_dir.paciente_id = Paciente_act.paciente_id
@@ -146,7 +141,7 @@ class Resources:
         P_dir.save()
         return Paciente_act.paciente_id
        
-   
+    
 
     def FamilyMemberHistory(self, json):
         familymh_keys = json.keys()
@@ -217,21 +212,26 @@ class Resources:
                 print("obs id:")
                 observacion.observacion_id = json[obs_item]
                 print(observacion.observacion_id)
-            if(obs_item == "coding"):
-                print(json[obs_item])
-                coding = {}
-                coding = (self.lst_2dic(json[obs_item][coding]))
-                print("coding after lst to dic fnc")
-                print(coding)
-                for c_item in coding:
-                    print(coding[c_item])    
-                    if(c_item == "code"):
-                        observacion.codigo_codigo = coding[c_item]
-                    if(c_item == "system"):
-                        observacion.codigo_sistema = coding[c_item]
-                    if(c_item == "display"):
-                        observacion.codigo_visual = coding[c_item]
+            if(obs_item == "code"):
+                for code_item in json[obs_item]:
+                    if(code_item == "coding"):
+                        print(json[obs_item]["coding"])
+                        coding = {}
+                        coding = (self.lst_2dic(json[obs_item][code_item]))
+                        print("coding after lst to dic fnc")
+                        print(coding)
+                        for c_item in coding:
+                            print(coding[c_item])    
+                            if(c_item == "code"):
+                                observacion.codigo_codigo = coding[c_item]
+                            if(c_item == "system"):
+                                observacion.codigo_sistema = coding[c_item]
+                            if(c_item == "display"):
+                                observacion.codigo_visual = coding[c_item]
+                    if(code_item == "text"):
+                        observacion.codigo_texto = json[obs_item][code_item]
             if(obs_item == "valueQuantity"):
+                observacion.tipo_valor = obs_item
                 print(json[obs_item])
                 for v_item in json[obs_item]:
                     if(v_item == "value"):
@@ -242,6 +242,23 @@ class Resources:
                         observacion.cantidad_codigo = json[obs_item][v_item]
                     if(v_item == "system"):
                         observacion.cantidad_sistema = json[obs_item][v_item]
+            if(obs_item == "valueCodeableConcept"):
+                observacion.tipo_valor = obs_item
+                print(json[obs_item])
+                for v_item in json[obs_item]:
+                    if(v_item == "display"):
+                        observacion.cantidad_visual = json[obs_item][v_item]
+                    if(v_item == "unit"):
+                        observacion.cantidad_unidad = json[obs_item][v_item]
+                    if(v_item == "code"):
+                        observacion.cantidad_codigo = json[obs_item][v_item]
+                    if(v_item == "system"):
+                        observacion.cantidad_sistema = json[obs_item][v_item]
+            if(obs_item == "valueString"):
+                observacion.tipo_valor = obs_item
+                observacion.cantidad_texto = json[obs_item]
+            if(obs_item == "status"):
+                observacion.estatus = json[obs_item]
             observacion.paciente_id = self.paciente
         observacion.save()
    
