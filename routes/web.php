@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\SiteController::class, "index"]);
+Route::get('/', [\App\Http\Controllers\SiteController::class, "index"])->name("home");
+
+Route::get('/login', [\App\Http\Controllers\SiteController::class, "login"]);
+Route::post('/login', [\App\Http\Controllers\SiteController::class, "loginPost"]);
+Route::get('/logout', [\App\Http\Controllers\SiteController::class, "logout"]);
+Route::get('/inicio', [\App\Http\Controllers\SiteController::class, "home"]);
 Route::get('/consultar', [\App\Http\Controllers\SiteController::class, "consultar"]);
+Route::get('/administrar', [\App\Http\Controllers\SiteController::class, "administrar"])->middleware("auth");
+Route::get('/administrar/actualizar', [\App\Http\Controllers\SiteController::class, "actualizar"])->middleware("auth");
 
 Route::get('alergias', [\App\Http\Controllers\AlergiasController::class, "index"]);
 Route::get('diagnostico', [\App\Http\Controllers\DiagnosticoController::class, "index"]);
@@ -25,3 +32,9 @@ Route::get('observacion', [\App\Http\Controllers\ObservacionController::class, "
 Route::get('organizacion', [\App\Http\Controllers\OrganizacionController::class, "index"]);
 Route::get('paciente', [\App\Http\Controllers\PacienteController::class, "index"]);
 
+Route::get('descargar', [\App\Http\Controllers\DownloadController::class, "index"]);
+Route::get('descargar/organizacion/{org}', [\App\Http\Controllers\DownloadController::class, "organizacion"]);
+Route::get('descargar/organizacion', [\App\Http\Controllers\DownloadController::class, "organizacionForm"]);
+Route::get('descargar/estado/{estado}', [\App\Http\Controllers\DownloadController::class, "estado"]);
+Route::get('descargar/estado', [\App\Http\Controllers\DownloadController::class, "estadoForm"]);
+Route::get('descargar/todo', [\App\Http\Controllers\DownloadController::class, "todo"]);

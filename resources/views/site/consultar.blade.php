@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mt-2">Consultar datos</h1>
     <p>Aquí podrás encontrar los diferentes datos que almancenamos en el repositorio.</p>
-    <table class="table table-bordered">
+    <table class="responsive-table striped">
         <tr>
             <th>Nombre</th>
             <th>Datos Totales</th>
@@ -51,8 +51,7 @@
         </tr>
         <tr>
             <th>Total</th>
-            <td>{{$alergias+ $diagnostico+ $encuentro+ $imagenes+ $medicamento+ $observacion+ $organizacion+ $paciente}}</td>
-            <td> <a href="{{url("paciente")}}" class="btn btn-primary">Ver</a></td>
+            <td colspan="2">{{$alergias+ $diagnostico+ $encuentro+ $imagenes+ $medicamento+ $observacion+ $organizacion+ $paciente}}</td>
         </tr>
     </table>
 @endsection

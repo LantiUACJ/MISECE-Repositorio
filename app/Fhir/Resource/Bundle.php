@@ -125,6 +125,9 @@ class Bundle extends DomainResource{
                 $entry->mark = $skip;
                 return $entry;
             }
+            if($skip != $entry->mark && $entry->resourceType == "Bundle"){
+                return $entry->findPatient($skip);
+            }
         }
     }
     public function findAllergy($skip = -1){
@@ -133,6 +136,10 @@ class Bundle extends DomainResource{
             if($skip != $entry->mark && $entry->resourceType == "AllergyIntolerance"){
                 $entry->mark = $skip;
                 $data [] = $entry;
+            }
+            if($skip != $entry->mark && $entry->resourceType == "Bundle"){
+                $bundle = $entry->findNotaEvolucion($skip);
+                array_merge($data, $bundle);
             }
         }
         return $data;

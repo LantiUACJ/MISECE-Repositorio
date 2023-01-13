@@ -16,13 +16,12 @@ return new class extends Migration
         Schema::create('diagnosticos', function (Blueprint $table) {
             $table->id();
             $table->string("paciente_id");
+            $table->string("organizacion_id");
             $table->string("encuentro_id");
-            $table->string("codigo_sistema");
+
             $table->string("codigo");
-            $table->string("codigo_visual");
-            $table->string("codigo_texto");
-            $table->string("estatus");
             $table->string("fecha_efectiva");
+            
             $table->timestamps();
         });
     }

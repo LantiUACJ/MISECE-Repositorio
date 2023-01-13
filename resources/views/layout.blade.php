@@ -1,53 +1,132 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Title</title>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISECE</title>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    </head>
-    <body>
-        
-        <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: rgb(0, 191, 0)">
-            <div class="container">
-                <a class="navbar-brand" href="/">Repositorio</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item {{ request()->is('/') ? "active" : null }}">
-                            <a class="nav-link" href="/">Inicio</a>
-                        </li>
-                        <li class="nav-item {{ request()->is('consultar') ? "active" : null }}">
-                            <a class="nav-link" href="/consultar">Consultar datos</a>
-                        </li>
-                        <!--<li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="#">Action 1</a>
-                                <a class="dropdown-item" href="#">Action 2</a>
+    <!-- Material -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    @yield('head')
+
+    <link rel="stylesheet" href="{{asset('styles.css')}}?v=1.0.0.2">
+</head>
+<body class="bg-dashboard">
+    <div class="menu-mobile-toggle" onclick="toggleMenu()">
+        <i class="material-icons">menu</i> <span>Menú</span>
+    </div>
+    <div class="menu-bg" id="menubg"></div>
+
+    <div class="box">
+        <div class="row fh nomargin">
+            <div class="col m12 l3 fh nopad sidebar-wrapper" id="menusidebar">
+                <div class="sidebar-container fh">
+                    <div class="sidebar fh">
+                        <div class="parent">
+                            <div class="top">
+                                <div class="menu-logo">
+                                    <img class="menu-logo" src="{{asset('logomisece.svg')}}" alt="">
+                                </div>
+                                <div class="menu-items">
+                                    
+                                    <a class="vcenter {{ request()->is('inicio') ? "active" : null }}"  href="{{url('/inicio')}}">
+                                        <i class="material-icons">home</i>Inicio
+                                    </a>
+                                    <a class="vcenter {{ request()->is('consultar') ? "active" : null }}"  href="{{url('/consultar')}}">
+                                        <!--<i class="material-icons">home</i>-->Consultar datos
+                                    </a>
+                                    <a class="vcenter {{ request()->is('descargar') ? "active" : null }}"  href="{{url('/descargar')}}">
+                                        <!--<i class="material-icons">home</i>-->Descargar
+                                    </a>
+                                    @auth                                    
+                                        <a class="vcenter {{ (request()->is('administrar') ) ? 'active' : null }}" href="{{url('/administrar')}}">
+                                            Administrar
+                                        </a>
+                                        <a class="vcenter" href="{{url('logout')}}">
+                                            Cerrar sesión
+                                        </a>
+                                    @endauth
+                                    @guest
+                                        <a class="vcenter {{ (request()->is('login') ) ? 'active' : null }}" href="{{url('login')}}">
+                                            Iniciar sesión
+                                        </a>
+                                    @endguest
+                                </div>
                             </div>
-                        </li>-->
-                    </ul>
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="">Login</a>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <div class="col m12 l9 fh data-panel">
+                <div class="data-container">
+                    <div class="data-header">
+                        <div class="box">
+                            <div class="row">
+                                <div class="col s9 m11">
+                                    @auth
+                                        <p class="header-text">¡Bienvenido, <b>{{auth()->user()->name}}!</b> </p>
+                                    @endauth
+                                    @guest
+                                    <p class="header-text">¡Bienvenido al repositorio!</b> </p>
+                                    @endguest
+                                </div>
+                                <div class="col s3 m1">
+                                    <img class="profile-img" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="opacity: 0.2;">
 
-        <div class="container">
-            @yield('content')
+                    @yield("content")
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <div id="modal1" class="modal small-modal">
+        <div class="modal-content">
+            <div class="row">
+                <h4>Guardado con éxito</h4>
+                <p>Se ha guardado un nuevo registro de hospital.</p>
+            </div>
+        </div>
+        <div class="modal-footer center">
+            <a href="dashboard-admin-hospital.html" class="modal-close waves-effect waves-green btn">Cerrar</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var sele = document.querySelectorAll('select');
+            var instance = M.FormSelect.init(sele);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+        function toggleMenu() {
+            var element = document.getElementById("menusidebar");
+            element.classList.toggle("showmenu");
+            var elementtwo = document.getElementById("menubg");
+            elementtwo.classList.toggle("showbg");
+        }
+        $(document).ready(function(){
+            $('.tooltipped').tooltip();
+        });
+        $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+    </script>
+
+    @yield('scripts')
+</body>
 </html>

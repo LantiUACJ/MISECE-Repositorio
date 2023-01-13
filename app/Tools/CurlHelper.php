@@ -20,6 +20,7 @@ class CurlHelper{
         curl_setopt($this->ch, CURLOPT_FOLLOWLOCATION, true);
         $auth = "Authorization: Bearer " . $this->makeJWT();
         curl_setopt($this->ch, CURLOPT_HTTPHEADER, [$auth]);
+        curl_setopt($this->ch, CURLOPT_TIMEOUT, 1);
         return curl_exec($this->ch);
     }
     public function post(){

@@ -2,22 +2,28 @@
 
 @section('content')
     <h1 class="mt-2">Medicamentos</h1>
-    <table class="table table-bordered">
+    <table class="responsive-table striped">
         <tr>
+            <th>paciente_id</th>
+            <th>organizacion_id</th>
+            <th>encuentro_id</th>
+            <th>hash</th>
+            <th>dosis_texto</th>
             <th>estatus</th>
-            <th>id_sistema_urn</th>
-            <th>id_valor_urnoid</th>
-            <th>codigo_texto</th>
-            <th>fecha_inicio</th>
+            <th>intent</th>
+            <th>medicamento</th>
         </tr>
         @foreach ($data as $item)
             <tr>
+                <td>{{$item->paciente_id}}</td>
+                <td>{{$item->organizacion_id}}</td>
+                <td>{{$item->encuentro_id}}</td>
+                <td>{{$item->hash}}</td>
+                <td>{{$item->dosis_texto}}</td>
                 <td>{{$item->estatus}}</td>
-                <td>{{$item->id_sistema_urn}}</td>
-                <td>{{$item->id_valor_urnoid}}</td>
-                <td>{{$item->codigo_texto}}</td>
-                <td>{{$item->fecha_inicio}}</td>
+                <td>{{$item->intent}}</td>
+                <td>{{$item->medicamento}}</td>
             </tr>
         @endforeach
-    </table>{{$data->links('pagination::bootstrap-4')}}
+    </table>{{$data->links('components.paginatorMaterialize')}}
 @endsection

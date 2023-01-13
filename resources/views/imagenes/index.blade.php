@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="mt-2">Imágenes</h1>
-    <table class="table table-bordered">
+    <table class="responsive-table striped">
         <tr>
             <th>estatus</th>
             <th>id_sistema_urn</th>
@@ -19,5 +19,5 @@
                 <th>{{$item->fecha_inicio}}</th>
             </tr>
         @endforeach
-    </table>{{$data->links('pagination::bootstrap-4')}}
+    </table>{{$data->links('components.paginatorMaterialize')}}
 @endsection

@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string("sexo");
             $table->string("etnia");
             $table->string("genero");
+            $table->string("estado_dir");
+            $table->string("ciudad_dir");
+            $table->string("cp_dir");
             $table->timestamps();
         });
     }

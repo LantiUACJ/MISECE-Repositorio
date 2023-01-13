@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Paciente extends Model
 {
     use HasFactory;
+
+    public function encuentros(){
+        return $this->hasMany(Encuentro::class, "paciente_id", "identifier");
+    }
+
 }

@@ -20,9 +20,8 @@ return new class extends Migration
             $table->string("hash");
             
             $table->string("estatus");
-            $table->string("sistema");
-            $table->string("codigo");
-            $table->string("visual");
+            $table->string("motivo");
+            
             $table->string("periodo_inicio");
             $table->string("periodo_fin");
             $table->timestamps();

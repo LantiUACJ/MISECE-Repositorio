@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="mt-2">Alergias</h1>
-    <table class="table table-bordered">
+    <table class="responsive-table striped">
         <tr>
             <th>nombre</th>
             <th>estado_dir</th>
@@ -17,5 +17,5 @@
                 <td>{{$item->cp_dir}}</td>
             </tr>
         @endforeach
-    </table>{{$data->links('pagination::bootstrap-4')}}
+    </table>{{$data->links('components.paginatorMaterialize')}}
 @endsection

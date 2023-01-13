@@ -2,28 +2,30 @@
 
 @section('content')
     <h1 class="mt-2">Alergias</h1>
-    <table class="table table-bordered">
+    <table class="responsive-table striped">
         <tr>
+            <th>paciente_id</th>
+            <th>organizacion_id</th>
+            <th>encuentro_id</th>
             <th>hash</th>
-            <th>criticidad</th>
-            <th>codigo_sistema</th>
-            <th>codigo</th>
-            <th>codigo_visual</th>
-            <th>texto</th>
             <th>estatus</th>
+            <th>tipo</th>
+            <th>codigo</th>
+            <th>criticidad</th>
             <th>fecha_de_registro</th>
         </tr>
         @foreach ($data as $item)
             <tr>
+                <td>{{$item->paciente_id}}</td>
+                <td>{{$item->organizacion_id}}</td>
+                <td>{{$item->encuentro_id}}</td>
                 <td>{{$item->hash}}</td>
-                <td>{{$item->criticidad}}</td>
-                <td>{{$item->codigo_sistema}}</td>
-                <td>{{$item->codigo}}</td>
-                <td>{{$item->codigo_visual}}</td>
-                <td>{{$item->texto}}</td>
                 <td>{{$item->estatus}}</td>
+                <td>{{$item->tipo}}</td>
+                <td>{{$item->codigo}}</td>
+                <td>{{$item->criticidad}}</td>
                 <td>{{$item->fecha_de_registro}}</td>
             </tr>
         @endforeach
-    </table>{{$data->links('pagination::bootstrap-4')}}
+    </table>{{$data->links('components.paginatorMaterialize')}}
 @endsection

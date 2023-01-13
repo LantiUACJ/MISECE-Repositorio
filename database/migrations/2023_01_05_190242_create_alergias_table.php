@@ -17,15 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string("paciente_id");
             $table->string("organizacion_id");
+            $table->string("encuentro_id");
             $table->string("hash");
 
-            $table->string("criticidad");
-            $table->string("codigo_sistema");
-            $table->string("codigo");
-            $table->string("codigo_visual");
-            $table->string("texto");
             $table->string("estatus");
+            $table->string("tipo");
+            $table->string("codigo");
+            $table->string("criticidad");
             $table->string("fecha_de_registro");
+
             $table->timestamps();
         });
     }

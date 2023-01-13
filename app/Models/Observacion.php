@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Observacion extends Model
 {
-    use HasFactory;
+    use HasFactory;//
 }

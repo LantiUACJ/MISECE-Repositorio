@@ -15,6 +15,8 @@ use App\Fhir\Element\Timing;
 
 class Observation extends DomainResource{
 
+    public $identifier, $basedOn, $partOf, $category, $focus, $performer;
+
     public function __construct($json = null){
         $this->resourceType = "Observation";
         parent::__construct($json);
