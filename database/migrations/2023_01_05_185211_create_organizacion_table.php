@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('organizacions', function (Blueprint $table) {
             $table->id();
-            $table->string("nombre");
-            $table->string("estado_dir");
-            $table->string("ciudad_dir");
-            $table->string("cp_dir");
+            $table->string("nombre"); // nombre de la organización de salid
+            $table->string("estado_dir"); // estado en donde esta ubicado fisicamente la organización de salud
+            $table->string("ciudad_dir"); // ciudad en donde esta ubicado fisicamente la organización de salud
+            $table->string("cp_dir"); // codigo postal en donde esta ubicado fisicamente la organización de salud
             $table->timestamps();
         });
     }

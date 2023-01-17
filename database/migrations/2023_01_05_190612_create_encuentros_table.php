@@ -15,15 +15,15 @@ return new class extends Migration
     {
         Schema::create('encuentros', function (Blueprint $table) {
             $table->id();
-            $table->string("paciente_id");
-            $table->string("organizacion_id");
-            $table->string("hash");
+            $table->string("paciente_id");// identificador del paciente 
+            $table->string("organizacion_id");// identificador de la organización
+            $table->string("hash");// hash de todos los datos de esta tabla (menos hash y timestamps[created_at, updated_at])
             
-            $table->string("estatus");
-            $table->string("motivo");
+            $table->string("estatus"); // estado de la visita
+            $table->string("motivo"); // motivo por la cual el paciente fue a consulta al medico
             
-            $table->string("periodo_inicio");
-            $table->string("periodo_fin");
+            $table->string("periodo_inicio"); // fecha de inicio de la consulta medica
+            $table->string("periodo_fin"); // fecha de final de la consulta medica
             $table->timestamps();
         });
     }

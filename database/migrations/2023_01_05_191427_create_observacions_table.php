@@ -16,17 +16,17 @@ return new class extends Migration
         Schema::create('observacions', function (Blueprint $table) {
             $table->id();
 
-            $table->string("paciente_id");
-            $table->string("organizacion_id");
-            $table->string("encuentro_id");
-            $table->string("hash");
+            $table->string("paciente_id"); // identificador del paciente 
+            $table->string("organizacion_id"); // identificador de la organización
+            $table->string("encuentro_id"); // identificador de la visita (encuentro)
+            $table->string("hash"); // hash de todos los datos de esta tabla (menos hash y timestamps[created_at, updated_at])
             
-            $table->string("categoria");
-            $table->string("codigo");
-            $table->string("valor");
+            $table->string("categoria"); // que clase de observación es (ej. exploración física)
+            $table->string("codigo"); // a que hace referencia esa observacion (ej. Peso)
+            $table->string("valor"); // que valor tiene (ej. 66 kg)
 
-            $table->string("fecha_efectiva");
-            $table->string("estatus");
+            $table->string("fecha_efectiva"); // fecha en la cual se realizo la observacion
+            $table->string("estatus"); // estado de la observacion
 
             $table->timestamps();
         });

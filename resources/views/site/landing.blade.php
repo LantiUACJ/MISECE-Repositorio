@@ -17,7 +17,7 @@
         <div class="mm-spacer"></div>
         <div class="mobile-menu" id="toggle">
             <div class="mm-logo">
-                <img class="mm-img" src="{{asset('logomisece.jpg')}}">
+                <img class="mm-img" src="{{asset('logomisece.svg')}}">
             </div>
             <div class="menu-icon" id="menuicon">
                 <div class="menu-line"></div>
@@ -31,7 +31,7 @@
                 <div class="nav" id="menu">
                     <div class="nav-content">
                         <div class="nav-logo">
-                            <img src="{{asset('logomisece.jpg')}}">
+                            <img src="{{asset('logomisece.svg')}}">
                         </div>
                         <div class="nav-list">
                             <a class="link-menu" href="#inicio">Inicio </a>
@@ -68,7 +68,7 @@
                                         <img src="icon-medic.png">
                                     </div>
                                     <p class="login-btn-text">Soy Médico</p>
-                                    <a href="{{url('login')}}" class="white-btn nomargin">Iniciar sesión</a>
+                                    <a href="{{env('MISECE_URL')}}login" class="white-btn nomargin">Iniciar sesión</a>
                                 </div>
 
                                 <div class="login-btn">
@@ -76,7 +76,7 @@
                                         <img src="icon-paramedic.png">
                                     </div>
                                     <p class="login-btn-text">Soy Paramédico</p>
-                                    <a href="{{url('login')}}" class="white-btn nomargin">Iniciar sesión</a>
+                                    <a href="{{env('MISECE_URL')}}login" class="white-btn nomargin">Iniciar sesión</a>
                                 </div>
 
                                 <div class="login-btn">
@@ -84,7 +84,7 @@
                                         <img src="icon-patient.png">
                                     </div>
                                     <p class="login-btn-text">Soy Paciente</p>
-                                    <a href="{{url('login')}}" class="white-btn nomargin">Iniciar sesión</a>
+                                    <a href="{{env('MISECE_URL')}}login" class="white-btn nomargin">Iniciar sesión</a>
                                 </div>
 
                                 <div class="login-btn">
@@ -92,7 +92,7 @@
                                         <img src="icon-hospital.png">
                                     </div>
                                     <p class="login-btn-text">Soy Institución de salud</p>
-                                    <a href="{{url('login')}}" class="white-btn nomargin">Iniciar sesión</a>
+                                    <a href="{{env('MISECE_URL')}}login" class="white-btn nomargin">Iniciar sesión</a>
                                 </div>
 
                                 

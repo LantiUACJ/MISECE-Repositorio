@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('alergias', function (Blueprint $table) {
             $table->id();
-            $table->string("paciente_id");
-            $table->string("organizacion_id");
-            $table->string("encuentro_id");
-            $table->string("hash");
+            $table->string("paciente_id"); // identificador del paciente 
+            $table->string("organizacion_id"); // identificador de la organización
+            $table->string("encuentro_id"); // identificador de la visita (encuentro)
+            $table->string("hash"); // hash de todos los datos de esta tabla (menos hash y timestamps[created_at, updated_at])
 
-            $table->string("estatus");
-            $table->string("tipo");
-            $table->string("codigo");
-            $table->string("criticidad");
-            $table->string("fecha_de_registro");
+            $table->string("estatus"); // estado de la alergia
+            $table->string("tipo"); // tipo de alergia (alergia o intolerancia)
+            $table->string("codigo"); // codigo de la alergia (generalmente será un texto con el nombre de la alergia ej. cacahuate)
+            $table->string("criticidad"); // Que tan critico es esa alergia (generalmente será N)
+            $table->string("fecha_de_registro"); // fecha en la cual se registro esta alergia en el sistema
 
             $table->timestamps();
         });

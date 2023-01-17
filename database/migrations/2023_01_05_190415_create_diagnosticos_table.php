@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('diagnosticos', function (Blueprint $table) {
             $table->id();
-            $table->string("paciente_id");
-            $table->string("organizacion_id");
-            $table->string("encuentro_id");
-
-            $table->string("codigo");
-            $table->string("fecha_efectiva");
+            /* Se quedará este recurso, ya que pudiera ser requerido más adelante */
+            $table->string("paciente_id");// identificador del paciente 
+            $table->string("organizacion_id");// identificador de la organización
+            $table->string("encuentro_id");// identificador de la visita (encuentro)
+            
+            $table->string("codigo"); // codigo del diagnóstico (generalmente será un texto con la descripción, ej. Toz)
+            $table->string("fecha_efectiva"); // fecha del diagnóstico
             
             $table->timestamps();
         });

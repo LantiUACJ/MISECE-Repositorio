@@ -38,3 +38,6 @@ Route::get('descargar/organizacion', [\App\Http\Controllers\DownloadController::
 Route::get('descargar/estado/{estado}', [\App\Http\Controllers\DownloadController::class, "estado"]);
 Route::get('descargar/estado', [\App\Http\Controllers\DownloadController::class, "estadoForm"]);
 Route::get('descargar/todo', [\App\Http\Controllers\DownloadController::class, "todo"]);
+
+
+Route::get("test", [\App\Http\Controllers\ApiController::class, "test"]);
