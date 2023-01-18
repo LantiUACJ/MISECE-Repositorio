@@ -312,12 +312,12 @@ class DownloadController extends Controller
         }
     }
     private function headers(){
-        /*header("Pragma: public");
+        header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
         header("Cache-Control: private",false);
         header("Content-Type: application/octet-stream");
         header("Content-Disposition: attachment; filename=\"data.csv\";" );
-        header("Content-Transfer-Encoding: binary"); */
+        header("Content-Transfer-Encoding: binary");
     }
 }
