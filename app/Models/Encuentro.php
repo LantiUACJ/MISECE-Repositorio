@@ -21,4 +21,7 @@ class Encuentro extends Model
     public function diagnosticos(){
         return $this->hasMany(Diagnostico::class, "encuentro_id", "id");
     }
+    public function paciente(){
+        return $this->hasOne(Paciente::class, "identifier", "paciente_id");
+    }
 }

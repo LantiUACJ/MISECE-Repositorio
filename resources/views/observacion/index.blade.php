@@ -20,7 +20,7 @@
             <tbody>
                 @foreach ($data as $item)
                     <tr>
-                        <td>{{$item->paciente_id}}</td>
+                        <td>{{$item->paciente->id}}</td>
                         <td>{{$item->organizacion_id}}</td>
                         <td>{{$item->encuentro_id}}</td>
                         <td>{{$item->hash}}</td>

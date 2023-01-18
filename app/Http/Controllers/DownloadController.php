@@ -24,7 +24,7 @@ class DownloadController extends Controller
     }
     public function organizacion(Organizacion $org){
         $this->headers();
-        $this->getdate($org);
+        $this->genData($org);
     }
     public function estadoForm(){
         $estados = Organizacion::select("estado_dir")->groupBy("estado_dir")->get();
@@ -55,7 +55,7 @@ class DownloadController extends Controller
                             $org->estado_dir . "\",\"". 
                             $org->ciudad_dir . "\",\"" . 
                             $org->cp_dir . "\",\"" . 
-                            $pac->identifier . "\",\"" .
+                            $pac->id . "\",\"" .
                             $pac->fecha_nac . "\",\"" .
                             $pac->estado_nac . "\",\"" .
                             $pac->nacionalidad . "\",\"" .
@@ -88,7 +88,7 @@ class DownloadController extends Controller
                             $org->estado_dir . "\",\"". 
                             $org->ciudad_dir . "\",\"" . 
                             $org->cp_dir . "\",\"" . 
-                            $pac->identifier . "\",\"" .
+                            $pac->id . "\",\"" .
                             $pac->fecha_nac . "\",\"" .
                             $pac->estado_nac . "\",\"" .
                             $pac->nacionalidad . "\",\"" .
@@ -121,7 +121,7 @@ class DownloadController extends Controller
                             $org->estado_dir . "\",\"". 
                             $org->ciudad_dir . "\",\"" . 
                             $org->cp_dir . "\",\"" . 
-                            $pac->identifier . "\",\"" .
+                            $pac->id . "\",\"" .
                             $pac->fecha_nac . "\",\"" .
                             $pac->estado_nac . "\",\"" .
                             $pac->nacionalidad . "\",\"" .
@@ -153,7 +153,7 @@ class DownloadController extends Controller
                             $org->estado_dir . "\",\"". 
                             $org->ciudad_dir . "\",\"" . 
                             $org->cp_dir . "\",\"" . 
-                            $pac->identifier . "\",\"" .
+                            $pac->id . "\",\"" .
                             $pac->fecha_nac . "\",\"" .
                             $pac->estado_nac . "\",\"" .
                             $pac->nacionalidad . "\",\"" .
@@ -188,7 +188,7 @@ class DownloadController extends Controller
                         $org->estado_dir . "\",\"". 
                         $org->ciudad_dir . "\",\"" . 
                         $org->cp_dir . "\",\"" . 
-                        $pac->identifier . "\",\"" .
+                        $pac->id . "\",\"" .
                         $pac->fecha_nac . "\",\"" .
                         $pac->estado_nac . "\",\"" .
                         $pac->nacionalidad . "\",\"" .
@@ -221,7 +221,7 @@ class DownloadController extends Controller
                         $org->estado_dir . "\",\"". 
                         $org->ciudad_dir . "\",\"" . 
                         $org->cp_dir . "\",\"" . 
-                        $pac->identifier . "\",\"" .
+                        $pac->id . "\",\"" .
                         $pac->fecha_nac . "\",\"" .
                         $pac->estado_nac . "\",\"" .
                         $pac->nacionalidad . "\",\"" .
@@ -254,7 +254,7 @@ class DownloadController extends Controller
                         $org->estado_dir . "\",\"". 
                         $org->ciudad_dir . "\",\"" . 
                         $org->cp_dir . "\",\"" . 
-                        $pac->identifier . "\",\"" .
+                        $pac->id . "\",\"" .
                         $pac->fecha_nac . "\",\"" .
                         $pac->estado_nac . "\",\"" .
                         $pac->nacionalidad . "\",\"" .
@@ -286,7 +286,7 @@ class DownloadController extends Controller
                         $org->estado_dir . "\",\"". 
                         $org->ciudad_dir . "\",\"" . 
                         $org->cp_dir . "\",\"" . 
-                        $pac->identifier . "\",\"" .
+                        $pac->id . "\",\"" .
                         $pac->fecha_nac . "\",\"" .
                         $pac->estado_nac . "\",\"" .
                         $pac->nacionalidad . "\",\"" .
@@ -312,12 +312,12 @@ class DownloadController extends Controller
         }
     }
     private function headers(){
-        header("Pragma: public");
+        /*header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
         header("Cache-Control: private",false);
         header("Content-Type: application/octet-stream");
         header("Content-Disposition: attachment; filename=\"data.csv\";" );
-        header("Content-Transfer-Encoding: binary"); 
+        header("Content-Transfer-Encoding: binary"); */
     }
 }
