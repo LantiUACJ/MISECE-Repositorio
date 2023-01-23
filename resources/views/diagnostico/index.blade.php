@@ -3,18 +3,18 @@
 @section('content')
     <h1 class="mt-2">Diagnósticos</h1>
     <div style="overflow: auto; width: 100%">
-        <table class="responsive-table striped">
+        <table class="striped">
             <tr>
-                <th>paciente_id</th>
-                <th>organizacion_id</th>
-                <th>encuentro_id</th>
-                <th>codigo</th>
-                <th>fecha_efectiva</th>
+                <th># Paciente</th>
+                <th>Organización</th>
+                <th># Encuentro</th>
+                <th>Código</th>
+                <th>Fecha</th>
             </tr>
             @foreach ($data as $item)
                 <tr>
                     <td>{{$item->paciente->id}}</td>
-                    <td>{{$item->organizacion_id}}</td>
+                    <td>{{$item->organizacion->nombre}}</td>
                     <td>{{$item->encuentro_id}}</td>
                     <td>{{$item->codigo}}</td>
                     <td>{{$item->fecha_efectiva}}</td>

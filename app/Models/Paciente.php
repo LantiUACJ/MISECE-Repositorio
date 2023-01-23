@@ -9,6 +9,10 @@ class Paciente extends Model
 {
     use HasFactory;
 
+    public function organizacion(){
+        return $this->hasOne(Organizacion::class, "id", "organizacion_id");
+    }
+    
     public function encuentros(){
         return $this->hasMany(Encuentro::class, "paciente_id", "identifier");
     }

@@ -3,29 +3,29 @@
 @section('content')
     <h1 class="mt-2">Encuentro</h1>
     <div style="overflow: auto; width: 100%">
-        <table class="responsive-table striped">
+        <table class="striped">
             <tr>
-                <th>paciente_id</th>
-                <th>organizacion_id</th>
-                <th>hash</th>
-                <th>estatus</th>
-                <th>sistema</th>
-                <th>codigo</th>
-                <th>visual</th>
-                <th>periodo_inicio</th>
-                <th>periodo_fin</th>
+                <th>#Paciente</th>
+                <th>Organización</th>
+                <th>Estatus</th>
+                <th>Sistema</th>
+                <th>Código</th>
+                <th>Visual</th>
+                <th>Inicio</th>
+                <th>Fin</th>
+                <th>Hash</th>
             </tr>
             @foreach ($data as $item)
                 <tr>
                     <td>{{$item->paciente->id}}</td>
-                    <td>{{$item->organizacion_id}}</td>
-                    <td>{{$item->hash}}</td>
+                    <td>{{$item->organizacion->nombre}}</td>
                     <td>{{$item->estatus}}</td>
                     <td>{{$item->sistema}}</td>
                     <td>{{$item->codigo}}</td>
                     <td>{{$item->visual}}</td>
                     <td>{{$item->periodo_inicio}}</td>
                     <td>{{$item->periodo_fin}}</td>
+                    <td>{{$item->hash}}</td>
                 </tr>
             @endforeach
         </table>

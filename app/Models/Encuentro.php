@@ -9,6 +9,9 @@ class Encuentro extends Model
 {
     use HasFactory;
 
+    public function organizacion(){
+        return $this->hasOne(Organizacion::class, "id", "organizacion_id");
+    }
     public function observaciones(){
         return $this->hasMany(Observacion::class, "encuentro_id", "id");
     }
