@@ -3,30 +3,28 @@
 @section('content')
     <h1 class="mt-2">Pacientes</h1>
     <div style="overflow: auto; width: 100%">
-        <table class="responsive-table striped">
+        <table class="striped">
             <tr>
-                <th>identifier</th>
-                <th>fecha_nac</th>
-                <th>estado_nac</th>
-                <th>nacionalidad</th>
-                <th>sexo</th>
-                <th>etnia</th>
-                <th>genero</th>
-                <th>tipo_dir</th>
-                <th>estado_dir</th>
-                <th>ciudad_dir</th>
-                <th>cp_dir</th>
+                <th>NO.</th>
+                <th>Fecha de nacimiento</th>
+                <th>Estado de nacimiento</th>
+                <th>Nacionalidad</th>
+                <th>Sexo</th>
+                <th>Etnia</th>
+                <th>Genero</th>
+                <th>Estado</th>
+                <th>Ciudad</th>
+                <th>CP</th>
             </tr>
             @foreach ($data as $item)
                 <tr>
-                    <td>{{$item->identifier}}</td>
+                    <td>{{$item->id}}</td>
                     <td>{{$item->fecha_nac}}</td>
                     <td>{{$item->estado_nac}}</td>
                     <td>{{$item->nacionalidad}}</td>
                     <td>{{$item->sexo}}</td>
                     <td>{{$item->etnia}}</td>
                     <td>{{$item->genero}}</td>
-                    <td>{{$item->tipo_dir}}</td>
                     <td>{{$item->estado_dir}}</td>
                     <td>{{$item->ciudad_dir}}</td>
                     <td>{{$item->cp_dir}}</td>

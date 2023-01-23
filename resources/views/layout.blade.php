@@ -28,9 +28,11 @@
                     <div class="sidebar fh">
                         <div class="parent">
                             <div class="top">
-                                <div class="menu-logo">
-                                    <img class="menu-logo" src="{{asset('logomisece.svg')}}" alt="">
-                                </div>
+                                <a href="{{url('/')}}">
+                                    <div class="menu-logo">
+                                        <img class="menu-logo" src="{{asset('logomisece.svg')}}" alt="">
+                                    </div>
+                                </a>
                                 <div class="menu-items">
                                     
                                     <a class="vcenter {{ request()->is('inicio') ? "active" : null }}"  href="{{url('/inicio')}}">

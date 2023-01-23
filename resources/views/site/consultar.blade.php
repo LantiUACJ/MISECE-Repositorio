@@ -3,7 +3,7 @@
 @section('content')
     <h1 class="mt-2">Consultar datos</h1>
     <p>Aquí podrás encontrar los diferentes datos que almancenamos en el repositorio.</p>
-    <table class="responsive-table striped">
+    <table class="striped">
         <tr>
             <th>Nombre</th>
             <th>Datos Totales</th>

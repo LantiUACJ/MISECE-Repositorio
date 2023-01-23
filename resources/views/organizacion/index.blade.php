@@ -3,12 +3,12 @@
 @section('content')
     <h1 class="mt-2">Alergias</h1>
     <div style="overflow: auto; width: 100%">
-        <table class="responsive-table striped">
+        <table class="striped">
             <tr>
-                <th>nombre</th>
-                <th>estado_dir</th>
-                <th>ciudad_dir</th>
-                <th>cp_dir</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Ciudad</th>
+                <th>Código Postal</th>
             </tr>
             @foreach ($data as $item)
                 <tr>

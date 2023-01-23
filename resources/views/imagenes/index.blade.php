@@ -3,13 +3,13 @@
 @section('content')
     <h1 class="mt-2">Imágenes</h1>
     <div style="overflow: auto; width: 100%">
-        <table class="responsive-table striped">
+        <table class="striped">
             <tr>
-                <th>estatus</th>
-                <th>id_sistema_urn</th>
-                <th>id_valor_urnoid</th>
-                <th>codigo_texto</th>
-                <th>fecha_inicio</th>
+                <th>Estatus</th>
+                <th>Id sistema urn</th>
+                <th>Id valor urnoid</th>
+                <th>Código texto</th>
+                <th>Fecha</th>
             </tr>
             @foreach ($data as $item)
                 <tr>
